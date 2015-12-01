@@ -10,6 +10,6 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        welcome to Korucall ,please clik this link to active your account <font color="blue"><a href="{{$link}}/{{$Password}}"><b>Active</b></a></font>
+        welcome to Korucall ,please clik this link to active your account <font color="blue"><a href="{{$link}}/{{$_token}}"><b>Active</b></a></font>
     </body>
 </html>

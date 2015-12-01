@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('calender')
 @section('content')
 
 
@@ -33,6 +33,7 @@
                                 <th class="numeric">Name</th>
                                 <th class="numeric">Email</th>
                                 <th class="numeric">Sex</th>
+                                <th class="numeric">Level</th>
                                 <th class="numeric">Action</th>
                             </tr>
                         </thead>
@@ -44,6 +45,7 @@
                                 <td class="numeric">{{ $user->name }}</td>
                                 <td class="numeric">{{ $user->email }}</td>
                                 <td class="numeric">{{ $user->sex==1?'MALE':'FEMALE' }}</td>
+                                <td class="numeric">{{ $user->level }}</td>
                                 <td class="numeric">
                                     <a href="{{ action('PagesController@editUser',$user->id) }}" class="btn">Edit</a>
                                     <a href="{{ action('PagesController@deleteUser',$user->id) }}" class="btn">Delete</a>

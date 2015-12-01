@@ -19,9 +19,19 @@ class DeleteController extends Controller {
 
         if ($cekUser > 0) {
             DB::table('users')->where('id', '=', $data['id'])->delete();
-            return Redirect::to('home')->withErrors('Succes User Already Deleted');
+            return Redirect::to('/home')->with('status', 'Succes delete user data ');
         }
         return Redirect::to('home')->withErrors('Error User Not Found');
+    }
+    public function deletePages() {
+        $data = Input::all();
+        $cekUser = DB::table('pages')->where('id', '=', $data['id'])->count();
+
+        if ($cekUser > 0) {
+            DB::table('pages')->where('id', '=', $data['id'])->delete();
+            return Redirect::to('/addPages')->with('status', 'Succes delete data ');
+        }
+        return Redirect::to('/addPages')->withErrors('Error User Not Found');
     }
 
 }
